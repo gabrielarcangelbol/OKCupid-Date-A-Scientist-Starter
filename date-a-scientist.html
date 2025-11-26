@@ -7517,6 +7517,26 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Date-A-Scientist:-Zodiac-Sign-Prediction-using-OKCupid-Profiles">Date-A-Scientist: Zodiac Sign Prediction using OKCupid Profiles<a class="anchor-link" href="#Date-A-Scientist:-Zodiac-Sign-Prediction-using-OKCupid-Profiles">¶</a></h1><h2 id="%F0%9F%93%96-Introduction">📖 Introduction<a class="anchor-link" href="#%F0%9F%93%96-Introduction">¶</a></h2><p>In this project, we analyze data from OKCupid, a popular dating application, to understand user profiles and preferences.<br/>
+The dataset contains diverse information including demographic details, lifestyle habits, and free-text essay responses.</p>
+<h2 id="%E2%9D%93-The-Problem">❓ The Problem<a class="anchor-link" href="#%E2%9D%93-The-Problem">¶</a></h2><p>Astrology is a popular conversation starter in dating.<br/>
+However, a significant portion of users (approx. 18%) do not list their zodiac sign.</p>
+<p>This project aims to build a Machine Learning model to predict a user's Zodiac Sign based on:</p>
+<ul>
+<li>Lifestyle choices (drinking, smoking, drugs)</li>
+<li>Self-written essays</li>
+</ul>
+<h2 id="%F0%9F%8E%AF-Goal">🎯 Goal<a class="anchor-link" href="#%F0%9F%8E%AF-Goal">¶</a></h2><p>To determine if there is a statistically significant correlation between a person's writing style/lifestyle and their astrological sign, and to deploy a classifier capable of predicting the missing signs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="%F0%9F%9B%A0%EF%B8%8F-Project-Setup">🛠️ Project Setup<a class="anchor-link" href="#%F0%9F%9B%A0%EF%B8%8F-Project-Setup">¶</a></h1><p>In this first step, we'll prepare the workspace for the <strong>OKCupid Date-A-Scientist</strong> project.</p>
 <h2 id="%F0%9F%93%A6-Download-the-Project-Materials">📦 Download the Project Materials<a class="anchor-link" href="#%F0%9F%93%A6-Download-the-Project-Materials">¶</a></h2><ol>
 <li>Download the ZIP file for the <strong>Date-A-Scientist</strong> project from the following link:<br/>
@@ -7561,14 +7581,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="gh"># 🔐 Git Repository Setup with SSH and LFS</span>
-
-To manage version control and large files efficiently, this project uses <span class="gs">**Git**</span>, <span class="gs">**SSH authentication**</span>, and <span class="gs">**Git LFS**</span>.
-
-<span class="gu">## 📁 Local Project Path</span>
-
-```bash
-cd code/DataScientistML_Codecademy/OKCupid-Date-A-Scientist-Starter
+<h1 id="%F0%9F%94%90-Git-Repository-Setup-with-SSH-and-LFS">🔐 Git Repository Setup with SSH and LFS<a class="anchor-link" href="#%F0%9F%94%90-Git-Repository-Setup-with-SSH-and-LFS">¶</a></h1><p>To manage version control and large files efficiently, this project uses <strong>Git</strong>, <strong>SSH authentication</strong>, and <strong>Git LFS</strong>.</p>
+<h2 id="%F0%9F%93%81-Local-Project-Path">📁 Local Project Path<a class="anchor-link" href="#%F0%9F%93%81-Local-Project-Path">¶</a></h2><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>code/DataScientistML_Codecademy/OKCupid-Date-A-Scientist-Starter
 </pre></div>
 <h2 id="%F0%9F%A7%B1-Initialize-and-Push-to-Remote-Repository">🧱 Initialize and Push to Remote Repository<a class="anchor-link" href="#%F0%9F%A7%B1-Initialize-and-Push-to-Remote-Repository">¶</a></h2><div class="highlight"><pre><span></span>git<span class="w"> </span>init
 git<span class="w"> </span>lfs<span class="w"> </span>install
@@ -7606,7 +7620,6 @@ origin  git@personal-github:gabrielarcangelbol/OKCupid-Date-A-Scientist-Starter.
 </code></pre>
 <hr/>
 <p>✅ With Git, SSH, and LFS configured, your project is ready for version-controlled development and collaboration.</p>
-<pre><code></code></pre>
 </div>
 </div>
 </div>
@@ -8261,12 +8274,28 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%A7%B9-Data-Cleaning:-Zodiac-Signs-and-Essay-Text">🧹 Data Cleaning: Zodiac Signs and Essay Text<a class="anchor-link" href="#%F0%9F%A7%B9-Data-Cleaning:-Zodiac-Signs-and-Essay-Text">¶</a></h1><p>Before we begin exploratory analysis, we need to clean and standardize key features in the dataset. This includes:</p>
-<ol>
-<li>Normalizing the <code>sign</code> column to extract the base zodiac label</li>
-<li>Combining all essay fields into a single text column for NLP processing</li>
-</ol>
-<p>These steps will ensure consistency and simplify downstream modeling.</p>
+<h2 id="%F0%9F%A7%B9-Data-Cleaning-Strategy">🧹 Data Cleaning Strategy<a class="anchor-link" href="#%F0%9F%A7%B9-Data-Cleaning-Strategy">¶</a></h2><h3 id="%F0%9F%8E%AF-Target-Variable-(sign)">🎯 Target Variable (sign)<a class="anchor-link" href="#%F0%9F%8E%AF-Target-Variable-(sign)">¶</a></h3><ul>
+<li>The raw data contains modifiers like <em>"but it doesn't matter"</em>.</li>
+<li>We normalized this column to extract only the 12 base signs.<br/>
+<em>Example: "Gemini and it's fun to think about" → "Gemini".</em></li>
+</ul>
+<h3 id="%E2%9A%A0%EF%B8%8F-Missing-Values">⚠️ Missing Values<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Missing-Values">¶</a></h3><ul>
+<li>Features with excessive missing data (e.g., <strong>offspring</strong>) were dropped to avoid introducing bias.</li>
+<li>For categorical features (e.g., <strong>drinks</strong>, <strong>smokes</strong>):<ul>
+<li>Missing values were treated as a separate <code>"Unknown"</code> category.</li>
+<li>Alternatively, imputed with the <strong>mode</strong> where appropriate.</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E2%9C%8D%EF%B8%8F-Text-Data">✍️ Text Data<a class="anchor-link" href="#%E2%9C%8D%EF%B8%8F-Text-Data">¶</a></h3><ul>
+<li>The 10 essay columns were combined into a single feature: <strong><code>essays_combined</code></strong>.</li>
+<li>This unified text field enables the use of NLP techniques such as:<ul>
+<li><strong>Bag-of-Words (BoW)</strong></li>
+<li><strong>TF-IDF</strong></li>
+</ul>
+</li>
+<li>Goal: capture the user's entire profile description for richer feature representation.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8610,6 +8639,24 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%F0%9F%93%8A-Age-Distribution-(Histogram)">📊 Age Distribution (Histogram)<a class="anchor-link" href="#%F0%9F%93%8A-Age-Distribution-(Histogram)">¶</a></h2><p><strong>Observation:</strong><br/>
+The age distribution is right-skewed, with the majority of users falling between 20 and 35 years old.<br/>
+This indicates a predominantly young user base, which may influence the language used in essays (e.g., internet slang) and lifestyle habits.</p>
+<hr/>
+<h2 id="%F0%9F%94%A5-Correlation-Matrix-(Heatmap)">🔥 Correlation Matrix (Heatmap)<a class="anchor-link" href="#%F0%9F%94%A5-Correlation-Matrix-(Heatmap)">¶</a></h2><p><strong>Observation:</strong><br/>
+There is a very weak correlation between numerical features (age, height, income).<br/>
+This suggests that these demographic metrics alone are insufficient to define user clusters, reinforcing the need to use text data (NLP) for more meaningful insights.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
 <h1 id="%F0%9F%93%9D-Essay-Text-Exploration">📝 Essay Text Exploration<a class="anchor-link" href="#%F0%9F%93%9D-Essay-Text-Exploration">¶</a></h1><p>The OKCupid dataset includes 10 free-text essay fields per user, which we've combined into a single column: <code>essays_combined</code>. This section explores the linguistic patterns and common themes expressed in user profiles.</p>
 <hr/>
 <h2 id="%F0%9F%94%8D-Goals">🔍 Goals<a class="anchor-link" href="#%F0%9F%94%8D-Goals">¶</a></h2><ul>
@@ -8933,6 +8980,45 @@ Test set size: (9778, 11)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="%E2%9A%99%EF%B8%8F-Model-Selection">⚙️ Model Selection<a class="anchor-link" href="#%E2%9A%99%EF%B8%8F-Model-Selection">¶</a></h2><p>We approached this project with two distinct goals:</p>
+<h3 id="%F0%9F%94%AE-Classification">🔮 Classification<a class="anchor-link" href="#%F0%9F%94%AE-Classification">¶</a></h3><ul>
+<li>Task: Predicting the user's <code>zodiac_sign</code> (12 classes).</li>
+<li>Models used:<ul>
+<li>Logistic Regression</li>
+<li>K-Nearest Neighbors (KNN)</li>
+<li>Naive Bayes</li>
+<li>Random Forest Classifier</li>
+</ul>
+</li>
+</ul>
+<h3 id="%F0%9F%93%88-Regression">📈 Regression<a class="anchor-link" href="#%F0%9F%93%88-Regression">¶</a></h3><ul>
+<li>Task: Predicting continuous variables such as <strong>age</strong> based on profile essays.</li>
+<li>Models compared:<ul>
+<li>Linear Regression</li>
+<li>Random Forest Regressor</li>
+</ul>
+</li>
+</ul>
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-Feature-Engineering">🛠️ Feature Engineering<a class="anchor-link" href="#%F0%9F%9B%A0%EF%B8%8F-Feature-Engineering">¶</a></h3><ul>
+<li>Text essays were transformed into numerical features using:<ul>
+<li><strong>CountVectorizer</strong></li>
+<li><strong>TfidfVectorizer</strong></li>
+</ul>
+</li>
+<li>Combined with categorical lifestyle features (e.g., drinking, smoking, drugs).</li>
+</ul>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="%F0%9F%A4%96-Build-Model(s)-(Optimized)">🤖 Build Model(s) (Optimized)<a class="anchor-link" href="#%F0%9F%A4%96-Build-Model(s)-(Optimized)">¶</a></h1><p>We previously trained several classification models to predict zodiac signs. Some models (like SVM and Random Forest) were slow on the full dataset, so we apply optimizations:</p>
 <hr/>
 <h2 id="%E2%9A%A1-Changes-Made">⚡ Changes Made<a class="anchor-link" href="#%E2%9A%A1-Changes-Made">¶</a></h2><ul>
@@ -9148,23 +9234,6 @@ dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%93%89-Model-Performance-Summary">📉 Model Performance Summary<a class="anchor-link" href="#%F0%9F%93%89-Model-Performance-Summary">¶</a></h1><p>All tested models (Logistic Regression, KNN, Linear SVC, Naive Bayes, Random Forest) achieved ~8–9% accuracy, which is equivalent to random guessing across 12 zodiac classes. This indicates:</p>
-<ul>
-<li>No meaningful predictive signal exists between lifestyle/demographic features and zodiac signs.</li>
-<li>Models are not failing; they are correctly reflecting the lack of correlation.</li>
-<li>Further experiments should incorporate essay text features (TF‑IDF, embeddings) or reframe the prediction target to more realistic outcomes (e.g., lifestyle habits).</li>
-</ul>
-<p>📊 Insight: This dataset demonstrates the importance of problem framing — not all targets are learnable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="%F0%9F%93%89-Regression-Approaches">📉 Regression Approaches<a class="anchor-link" href="#%F0%9F%93%89-Regression-Approaches">¶</a></h1><p>In addition to classification, we tested regression models to predict continuous variables from the dataset. This provides a complementary perspective and fulfills the requirement of comparing regression approaches.</p>
 <hr/>
 <h2 id="%F0%9F%94%A7-Models-Used">🔧 Models Used<a class="anchor-link" href="#%F0%9F%94%A7-Models-Used">¶</a></h2><ul>
@@ -9351,19 +9420,87 @@ Random Forest RMSE:     0.82
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%93%89-Model-Performance-Summary">📉 Model Performance Summary<a class="anchor-link" href="#%F0%9F%93%89-Model-Performance-Summary">¶</a></h1><p>All tested classification models (Logistic Regression, KNN, Linear SVC, Naive Bayes, Random Forest) achieved ~8–9% accuracy, which is equivalent to random guessing across 12 zodiac classes. This indicates:</p>
+<h1 id="%F0%9F%93%89-Model-Performance-Summary">📉 Model Performance Summary<a class="anchor-link" href="#%F0%9F%93%89-Model-Performance-Summary">¶</a></h1><h3 id="%F0%9F%94%AE-Classification-Results">🔮 Classification Results<a class="anchor-link" href="#%F0%9F%94%AE-Classification-Results">¶</a></h3><p>All tested classification models (Logistic Regression, KNN, Linear SVC, Naive Bayes, Random Forest) achieved <strong>~8–9% accuracy</strong>, which is equivalent to random guessing across 12 zodiac classes.</p>
+<p>This indicates:</p>
 <ul>
 <li>No meaningful predictive signal exists between lifestyle/demographic features and zodiac signs.</li>
-<li>Models are not failing; they are correctly reflecting the lack of correlation.</li>
-<li>Further experiments should incorporate essay text features (TF‑IDF, embeddings) or reframe the prediction target to more realistic outcomes (e.g., lifestyle habits).</li>
+<li>Models are not failing; they are correctly reflecting the lack of correlation (<strong>Low Signal-to-Noise Ratio</strong>).</li>
+<li>Further experiments should incorporate advanced essay text features (e.g., embeddings like <strong>Word2Vec</strong> or <strong>BERT</strong>) or reframe the prediction target to more realistic outcomes.</li>
 </ul>
 <hr/>
-<p>Regression models were used to predict continuous variables such as age. Results showed:</p>
+<h3 id="%F0%9F%93%88-Regression-Results">📈 Regression Results<a class="anchor-link" href="#%F0%9F%93%88-Regression-Results">¶</a></h3><p>Regression models were used to predict continuous variables such as <strong>age</strong>. Results showed:</p>
 <ul>
-<li><strong>Linear Regression</strong> was fast and interpretable but had low accuracy (R² = 0.12).</li>
-<li><strong>Random Forest Regressor</strong> performed better (R² = 0.27) and reduced error (MAE and RMSE), but was slower and less interpretable.</li>
+<li><strong>Linear Regression</strong>: fast and interpretable but had low accuracy ((R^2 = 0.12)).</li>
+<li><strong>Random Forest Regressor</strong>: performed better ((R^2 = 0.27)) and reduced error (MAE and RMSE), but was slower and less interpretable.</li>
 </ul>
-<p>📊 Insight: This dataset demonstrates the importance of problem framing — not all targets are learnable, and some require richer features or reframed questions.</p>
+<hr/>
+<h3 id="%F0%9F%93%8A-Insight">📊 Insight<a class="anchor-link" href="#%F0%9F%93%8A-Insight">¶</a></h3><p>This dataset demonstrates the importance of <strong>problem framing</strong>:<br/>
+Not all targets are learnable, and some require richer features or reframed questions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%F0%9F%93%8A-Model-Comparison-Table">📊 Model Comparison Table<a class="anchor-link" href="#%F0%9F%93%8A-Model-Comparison-Table">¶</a></h2><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Model</th>
+<th>Accuracy / R²</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classification</td>
+<td>Logistic Regression</td>
+<td>~8%</td>
+<td>Fast, interpretable</td>
+<td>Accuracy near random baseline</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>KNN</td>
+<td>~8–9%</td>
+<td>Simple, non-parametric</td>
+<td>Sensitive to feature scaling, low accuracy</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Naive Bayes</td>
+<td>~8%</td>
+<td>Efficient with text data</td>
+<td>Assumes independence, poor performance</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Random Forest Classifier</td>
+<td>~8.7%</td>
+<td>Handles categorical + text features</td>
+<td>Still near baseline, limited signal</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Linear Regression</td>
+<td>R² = 0.12</td>
+<td>Fast, interpretable</td>
+<td>Low predictive power</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Random Forest Regressor</td>
+<td>R² = 0.27</td>
+<td>Better performance, lower error (MAE, RMSE)</td>
+<td>Slower, less interpretable</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -9705,32 +9842,37 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%E2%9C%85-Conclusions">✅ Conclusions<a class="anchor-link" href="#%E2%9C%85-Conclusions">¶</a></h1><p>This project explored the feasibility of predicting a user's zodiac sign using OKCupid profile data. Through classification and regression modeling, we uncovered several key insights:</p>
+<h1 id="%E2%9C%85-Conclusions">✅ Conclusions<a class="anchor-link" href="#%E2%9C%85-Conclusions">¶</a></h1><p>This project explored the feasibility of predicting a user's zodiac sign using OKCupid profile data.<br/>
+Through classification and regression modeling, we uncovered several key insights and limitations.</p>
 <hr/>
 <h2 id="%F0%9F%94%8D-What-We-Learned">🔍 What We Learned<a class="anchor-link" href="#%F0%9F%94%8D-What-We-Learned">¶</a></h2><ul>
-<li>Categorical features like diet, job, and religion offer limited predictive power for zodiac classification.</li>
+<li>Categorical features like <strong>diet, job, and religion</strong> offer limited predictive power for zodiac classification.</li>
 <li>Classification models performed near random baseline (~8–9% accuracy), confirming the lack of signal.</li>
-<li>Regression models showed slightly better performance when predicting continuous traits like age, with Random Forest outperforming Linear Regression.</li>
+<li>Regression models showed slightly better performance when predicting continuous traits like <strong>age</strong>, with Random Forest outperforming Linear Regression.</li>
+<li>Real-world social data is inherently <strong>messy and subjective</strong>, requiring careful preprocessing and normalization.</li>
 </ul>
 <hr/>
 <h2 id="%F0%9F%93%8A-Key-Findings">📊 Key Findings<a class="anchor-link" href="#%F0%9F%93%8A-Key-Findings">¶</a></h2><ul>
 <li><strong>Random Forest (classification)</strong> achieved the highest accuracy at 8.7%, but still near baseline.</li>
 <li><strong>Random Forest (regression)</strong> achieved R² = 0.27, indicating modest predictive power for numeric traits.</li>
-<li>Sentiment analysis from essays did not improve zodiac prediction, but may be useful for other traits.</li>
+<li>Lifestyle features (e.g., <strong>drinking, smoking</strong>) showed minimal correlation with astrological signs.</li>
+<li>Sentiment analysis from essays did not improve zodiac prediction, but may be useful for other behavioral or emotional traits.</li>
 </ul>
 <hr/>
 <h2 id="%F0%9F%8E%AF-Takeaways">🎯 Takeaways<a class="anchor-link" href="#%F0%9F%8E%AF-Takeaways">¶</a></h2><ul>
-<li>The target variable (<code>zodiac_clean</code>) is not learnable from structured profile data alone.</li>
-<li>Regression tasks may be more appropriate for numeric traits like age or income.</li>
+<li>The target variable (<code>zodiac_clean</code>) is <strong>not learnable</strong> from structured profile data alone.</li>
+<li>Regression tasks may be more appropriate for numeric traits like <strong>age</strong> or <strong>income</strong>.</li>
 <li>Future work should explore:<ul>
-<li>NLP-based features from essay text</li>
-<li>Predicting lifestyle traits instead of zodiac signs</li>
-<li>Clustering users into dating archetypes</li>
+<li><strong>NLP-based features</strong> from essay text (BoW, TF-IDF, embeddings)</li>
+<li>Predicting <strong>binary lifestyle traits</strong> (e.g., smoker vs. non-smoker) instead of zodiac signs</li>
+<li>Using <strong>Sentiment Analysis</strong> to match users based on emotional compatibility rather than astrology</li>
+<li>Clustering users into <strong>dating archetypes</strong> for more meaningful segmentation</li>
 </ul>
 </li>
 </ul>
 <hr/>
-<p>This project reinforces the importance of problem framing, feature richness, and iterative modeling. Even when models underperform, the process yields valuable insights into data limitations and modeling strategy.</p>
+<h2 id="%F0%9F%A7%AD-Final-Reflection">🧭 Final Reflection<a class="anchor-link" href="#%F0%9F%A7%AD-Final-Reflection">¶</a></h2><p>While we successfully built a pipeline to clean data, process natural language, and train classification models, the results indicate that zodiac signs cannot be reliably predicted from OKCupid profile data alone.<br/>
+However, the project reinforces the importance of <strong>problem framing, feature richness, and iterative modeling</strong>. Even when models underperform, the process yields valuable insights into <strong>data limitations, modeling strategy, and future research directions</strong>.</p>
 </div>
 </div>
 </div>
